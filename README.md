@@ -4,15 +4,13 @@ A tool that takes unstructured text and generates semantically correct, accessib
 
 ## Why
 
-Most tools that generate tables from text produce visually adequate but semantically poor HTML — missing caption elements, incorrect use of scope, no thead or tbody, and poor screen reader support. Tabulate is built with accessibility as a first principle, not an afterthought.
+Semantically correct HTML tables are more accessible to users of assistive technology, more useful to search engines, and more maintainable for developers. A well-structured table uses caption to describe its purpose, scope to clarify relationships between headers and data, and thead/tbody to separate structure from content. Tabulate aims to make that level of quality the default, not an afterthought.
 
 ## Technologies
 
-- React
-- TypeScript
+- HTML, CSS, and vanilla JavaScript
 - Claude API (Anthropic)
 - Netlify (serverless functions)
-- GitHub Actions (CI/CD)
 
 ## Status
 work in progress
