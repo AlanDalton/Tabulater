@@ -1,0 +1,110 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1rem;
+  color: #222;
+  background: #fff;
+}
+
+h1, h2 {
+  line-height: 1.2;
+}
+
+a {
+  color: #005ea2;
+}
+
+a:visited {
+  color: #54278f;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  border: 2px solid #767676;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+textarea:focus {
+  outline: 3px solid #005ea2;
+  outline-offset: 2px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: inherit;
+  background: #005ea2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background: #004b87;
+}
+
+button:focus {
+  outline: 3px solid #005ea2;
+  outline-offset: 2px;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+caption {
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+th, td {
+  border: 1px solid #767676;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+#error-message {
+  color: #d83933;
+  border: 2px solid #d83933;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+#copy-confirmation {
+  color: #008000;
+  font-weight: bold;
+}
