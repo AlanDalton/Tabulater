@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabulate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Tabulate</h1>
+    <p>Paste or type some text below and Tabulate will use <a href="https://www.anthropic.com/claude">Claude AI</a> to turn it into a semantically correct, accessible table.</p>
+
+    <p>By using Tabulate, your text is processed by the following services, each with their own privacy policy:</p>
+    <ul>
+      <li><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub</a> — hosts this webpage</li>
+      <li><a href="https://www.netlify.com/privacy/">Netlify</a> — processes your request</li>
+      <li><a href="https://www.anthropic.com/privacy">Anthropic (Claude AI)</a> — generates the table</li>
+    </ul>
+
+    <form id="tabulate-form">
+      <label for="input-text">Your text</label>
+      <textarea id="input-text" name="input-text" rows="8" placeholder="For example: Name, Age, City. Alice, 30, Dublin. Bob, 25, Cork. Carol, 35, Galway."></textarea>
+      <button type="submit">Generate table</button>
+    </form>
+
+    <section id="output" hidden>
+      <h2>Your table</h2>
+      <div id="table-container"></div>
+      <div class="button-group">
+        <button id="copy-table">Copy table</button>
+        <button id="copy-html">(for web developers) Copy HTML</button>
+      </div>
+      <p id="copy-confirmation" hidden>Copied!</p>
+    </section>
+
+    <section id="error-message" hidden>
+      <h2>Error</h2>
+      <p id="error-details"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
