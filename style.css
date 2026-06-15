@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  font-family: Seravek, 'Gill Sans Nova', Ubuntu, Candara, 'DejaVu Sans', source-sans-pro, sans-serif;
   line-height: 1.5;
   max-width: 50rem;
   margin: 0 auto;
@@ -13,6 +13,7 @@ body {
 }
 
 h1, h2 {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   line-height: 1.2;
 }
 
@@ -50,21 +51,51 @@ button {
   padding: 0.5rem 1rem;
   font-family: inherit;
   font-size: inherit;
-  background: #005ea2;
-  color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 1rem;
 }
 
-button:hover {
-  background: #004b87;
-}
-
 button:focus {
   outline: 3px solid #005ea2;
   outline-offset: 2px;
+}
+
+/* Primary action button */
+button[type="submit"] {
+  background: #005ea2;
+  color: #fff;
+  display: block;
+  margin-top: 1.5rem;
+}
+
+button[type="submit"]:hover {
+  background: #004b87;
+}
+
+/* Secondary buttons */
+fieldset button,
+.button-group button {
+  background: #e0e0e0;
+  color: #222;
+}
+
+fieldset button:hover,
+.button-group button:hover {
+  background: #c8c8c8;
+}
+
+fieldset {
+  border: 1px solid #767676;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 0.25rem;
 }
 
 .button-group {
@@ -107,4 +138,12 @@ th {
 #copy-confirmation {
   color: #008000;
   font-weight: bold;
+}
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  background: #f5f5f5;
+  border-top: 2px solid #e0e0e0;
 }
