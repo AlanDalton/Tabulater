@@ -12,8 +12,11 @@ body {
   background: #fff;
 }
 
-h1, h2 {
+h1, h2, label, legend, button[type="submit"] {
   font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+h1, h2 {
   line-height: 1.2;
 }
 
@@ -49,7 +52,6 @@ textarea:focus {
 
 button {
   padding: 0.5rem 1rem;
-  font-family: inherit;
   font-size: inherit;
   border: none;
   border-radius: 4px;
@@ -77,6 +79,7 @@ button[type="submit"]:hover {
 /* Secondary buttons */
 fieldset button,
 .button-group button {
+  font-family: inherit;
   background: #e0e0e0;
   color: #222;
 }
@@ -87,6 +90,7 @@ fieldset button:hover,
 }
 
 fieldset {
+  max-width: 50%;
   border: 1px solid #767676;
   border-radius: 4px;
   padding: 1rem;
@@ -142,7 +146,7 @@ th {
 
 /* Footer */
 footer {
-  margin-top: 4rem;
+  margin-top: 8rem;
   padding: 2rem 1rem;
   background: #f5f5f5;
   border-top: 2px solid #e0e0e0;
