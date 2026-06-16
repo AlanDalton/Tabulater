@@ -18,7 +18,7 @@ export default async (request) => {
       },
       body: JSON.stringify({
         model: "claude-sonnet-4-6",
-        max_tokens: 1024,
+        max_tokens: 2048,
         messages: [
           {
             role: "user",
@@ -54,6 +54,24 @@ ${text}`,
     });
 
     const data = await response.json();
+
+    if (!response.ok) {
+      const errorMessage = data.error?.message || '';
+      const isCreditError = response.status === 429 &&
+        (errorMessage.toLowerCase().includes('credit') ||
+         errorMessage.toLowerCase().includes('balance'));
+
+      return new Response(
+        JSON.stringify({
+          error: isCreditError ? 'credits_exhausted' : (errorMessage || 'Something went wrong'),
+        }),
+        {
+          status: response.status,
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+
     const table = data.content[0].text;
 
     return new Response(JSON.stringify({ table }), {
