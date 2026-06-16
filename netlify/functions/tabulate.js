@@ -19,10 +19,10 @@ export default async (request) => {
       body: JSON.stringify({
         model: "claude-sonnet-4-6",
         max_tokens: 2048,
-        messages: [
+        system: [
           {
-            role: "user",
-            content: `Convert the following text into a semantically correct, accessible HTML table, following W3C WAI guidelines precisely.
+            type: "text",
+            text: `Convert the text the user provides into a semantically correct, accessible HTML table, following W3C WAI guidelines precisely.
 
 STRUCTURE:
 - Use <table>, <thead>, <tbody> elements appropriately
@@ -44,10 +44,14 @@ CAPTION AND SUMMARY:
 
 GENERAL:
 - If the input data is too complex for one table, consider splitting it into multiple simpler tables
-- Return only the HTML — no explanation, no markdown code fences, just the raw HTML elements
-
-Text to convert:
-${text}`,
+- Return only the HTML — no explanation, no markdown code fences, just the raw HTML elements`,
+            cache_control: { type: "ephemeral" },
+          },
+        ],
+        messages: [
+          {
+            role: "user",
+            content: text,
           },
         ],
       }),
