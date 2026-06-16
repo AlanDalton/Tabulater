@@ -34,12 +34,10 @@ form.addEventListener('submit', async (event) => {
     return;
   }
 
-  // Hide previous output and errors
   output.hidden = true;
   errorMessage.hidden = true;
   copyConfirmation.hidden = true;
 
-  // Disable the submit button while waiting
   const submitButton = form.querySelector('button[type="submit"]');
   submitButton.disabled = true;
   submitButton.textContent = 'Tabulating…';
@@ -54,7 +52,14 @@ form.addEventListener('submit', async (event) => {
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.error || `Server error: ${response.status}`);
+      if (data.error === 'credits_exhausted') {
+        errorDetails.innerHTML = `Tabulater has reached its usage limit for now. Each request uses the Claude API, which costs money to run. If you'd like to help cover those costs, you're welcome to do so here: <a href="https://BuyMeACoffee.com/AlanDalton">Buy Me A Coffee</a>.`;
+      } else {
+        errorDetails.textContent = data.error || `Server error: ${response.status}`;
+      }
+      errorMessage.hidden = false;
+      errorMessage.focus();
+      return;
     }
 
     generatedHtml = data.table;
